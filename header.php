@@ -17,16 +17,19 @@
                 <img class="prise" src="./img/prise.png" alt="logo">
             </a>
         </div>
-        <div class="searchInputWrapper">
-            <form action="" method="get">
+        <a href="https://github.com/camille-clappaz/autocompletion">
+            <img class="logoGit" src="./img/github-logo.png" alt="">
+        </a>
+        <div class="searchInputWrapper wrapper2">
+            <form  class="search-input" action="" method="get">
                 <a href="" target="_blank" hidden></a>
-                <input type="text" id="recherche" placeholder="Search your favorite climber..">
+                <input type="text" id="recherche" class="form-control me-2" placeholder="Search your favorite climber..">
                 <div class="autocom-box3">
                     <!-- here list are inserted from javascript -->
                 </div>
-                <hr class="my-4 ">
+                <hr class="my-4">
                 <div class="autocom-box4">
-  <!-- here list are inserted from javascript -->
+                    <!-- here list are inserted from javascript -->
                 </div>
                 <i class="searchInputIcon fa fa-search"></i>
 
