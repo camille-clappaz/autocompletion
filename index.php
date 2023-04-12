@@ -16,25 +16,30 @@ require("bdd.php");
 </head>
 
 <body>
-    <header>
-        <?php require("header.php") ?>
+    <header class="titreIndex">
+    <h1>La montagne ça vous gagne!</h1>
     </header>
     <main class="d-flex justify-content-center">
-        <div class="wrapper">
+        <div class="wrapper ">
+       
             <form class="search-input" role="search" method="get">
                 <a href="" target="_blank" hidden></a>
-                <input id="search" class="form-control me-2" type="search" placeholder="Type to search..">
+                <input id="search" class="form-control me-2" type="search" placeholder="Search your favorite climber.." autocomplete="off">
                 <div class="autocom-box">
                     <!-- here list are inserted from javascript -->
+                </div>
+                <hr class="my-4">
+                <div class="autocom-box2">
+
                 </div>
                 <div class="icon"><i class="fas fa-search"></i></div>
             </form>
         </div>
+       
     </main>
     <footer></footer>
 </body>
 
 </html>
-<!-- requete sql avec like pour afficher uniquement ce qu'on a chercher -->
 <script src="script.js"></script>
 <script src="suggestions.js"></script> 

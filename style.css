@@ -5,10 +5,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  background: #644bff;
-  padding: 0 20px;
-}
+
 ::selection{
   color: #fff;
   background: #664AFF;
@@ -24,7 +21,7 @@ body{
   position: relative;
   box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
 }
-/* .search-input input{
+.search-input input{
   height: 55px;
   width: 100%;
   outline: none;
@@ -34,22 +31,13 @@ body{
   font-size: 18px;
   box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 }
-.search-input.active input{
-  border-radius: 5px 5px 0 0;
-}
-.search-input .autocom-box{
+
+.search-input .autocom-box, .search-input .autocom-box2{
   padding: 0;
-  opacity: 0;
-  pointer-events: none;
-  max-height: 280px;
-  overflow-y: auto;
-}
-.search-input.active .autocom-box{
-  padding: 10px 8px;
   opacity: 1;
   pointer-events: auto;
 }
-.autocom-box li{
+.autocom-box p, .autocom-box2 p{
   list-style: none;
   padding: 8px 12px;
   display: none;
@@ -57,25 +45,12 @@ body{
   cursor: default;
   border-radius: 3px;
 }
-.search-input.active .autocom-box li{
+.search-input .autocom-box p, .search-input .autocom-box2 p{
   display: block;
-} */
-/* .autocom-box li:hover{
+} 
+ .autocom-box p:hover, .autocom-box2 p:hover{
   background: #efefef;
-} */
-.search-input .icon{
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 55px;
-  width: 55px;
-  text-align: center;
-  line-height: 55px;
-  font-size: 20px;
-  color: #644bff;
-  cursor: pointer;
 }
-
 
 a{
     text-decoration: none;
@@ -84,4 +59,56 @@ a{
 body{
     background-image: url(./img/banniere.jpg);
 
+}
+.bodyElmt{
+  background-image: url(./img/element.jpg);
+  background-size: cover;
+
+}
+nav{
+  padding: 3vh;
+  display: flex;
+  justify-content: space-between;
+  height:30vh;
+}
+.acceuil{
+  font-size: large;
+}
+#recherche{
+    width: 20rem;
+    height: 2rem;
+    padding: 0 1rem; 
+    border-radius: 2rem;
+    border: none;
+  }
+.element{
+  display: flex;
+  justify-content: center;
+}
+.grimpeur{
+  width: 50%;
+
+}
+.searchInputWrapper {
+  position: relative;
+}
+.searchInputIcon {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.5rem;
+  color: #a1a1a1;
+
+}
+.prise{
+  width:10vw; 
+  border-radius: 10vw;
+}
+h1{
+  font-size: 10vh;
+}
+.titreIndex{
+  display: flex;
+  justify-content: center;
+  padding: 5vh;
+color: wheat;
 }

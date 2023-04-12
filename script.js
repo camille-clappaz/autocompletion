@@ -1,5 +1,8 @@
 const search= document.getElementById("search");
 const list = document.querySelector('.autocom-box');
+const list2= document.querySelector('.autocom-box2');
+const list3 = document.querySelector('.autocom-box3');
+const list4= document.querySelector('.autocom-box4'); 
 
 if(search){
     search.addEventListener("keyup", (e)=>{
@@ -10,7 +13,7 @@ if(search){
             }).then((data) => {
                 data.forEach(element => {
                     let p = document.createElement('p');
-                    p.innerHTML = '<a href="element.php?id='+ element.id+'">'+element.prenom+'</a>';
+                    p.innerHTML = '<a href="element.php?id='+ element.id+'">'+element.prenom+" "+element.nom+'</a>';
                      list.append(p);
                 });
             }).catch((err) => {
@@ -21,8 +24,68 @@ if(search){
         })
         
 }
+if(search){
+    search.addEventListener("keyup", (e)=>{
+        list2.innerHTML = "";
+        if(e.target.value != ''){
+            fetch('recherche.php?search2='+e.target.value).then((res) => {
+                return res.json()
+            }).then((data) => {
+                data.forEach(element => {
+                    let p = document.createElement('p');
+                    p.innerHTML = '<a href="element.php?id='+ element.id+'">'+element.prenom+" "+element.nom+'</a>';
+                     list2.append(p);
+                });
+            }).catch((err) => {
+                console.log(err);
+            })
+        
+        }
+        })
+        
+}
+if(recherche){
+    recherche.addEventListener("keyup", (e)=>{
+        list3.innerHTML = "";
+        if(e.target.value != ''){
+            fetch('recherche.php?recherche='+e.target.value).then((res) => {
+                return res.json()
+            }).then((data) => {
+                data.forEach(element => {
+                    let p = document.createElement('p');
+                    p.innerHTML = '<a href="element.php?id='+ element.id+'">'+element.prenom+" "+element.nom+'</a>';
+                     list3.append(p);
+                });
+            }).catch((err) => {
+                console.log(err);
+            })
+        
+        }
+        })
+        
+}
+// if(recherche2){
+//     recherche2.addEventListener("keyup", (e)=>{
+//         list4.innerHTML = "";
+//         if(e.target.value != ''){
+//             fetch('recherche.php?recherche2='+e.target.value).then((res) => {
+//                 return res.json()
+//             }).then((data) => {
+//                 data.forEach(element => {
+//                     let p = document.createElement('p');
+//                     p.innerHTML = '<a href="element.php?id='+ element.id+'">'+element.prenom+" "+element.nom+'</a>';
+//                      list4.append(p);
+//                 });
+//             }).catch((err) => {
+//                 console.log(err);
+//             })
+        
+//         }
+//         })
+        
+// }
 
-// console.log(window.location.href);
+// console.log(window.location.href); permet de cibler l'url de la page sur laquelle on est 
 let id = window.location.href.split('=');
 console.log( window.location.href);
 fetch('recherche.php?id='+id[1]).then((res) => {
@@ -41,59 +104,3 @@ fetch('recherche.php?id='+id[1]).then((res) => {
 
 
 
-// getting all required elements
-// const searchWrapper = document.querySelector(".search-input");
-// const inputBox = searchWrapper.querySelector("input");
-// const suggBox = searchWrapper.querySelector(".autocom-box");
-// const icon = searchWrapper.querySelector(".icon");
-// let linkTag = searchWrapper.querySelector("a");
-// let webLink;
-// // if user press any key and release
-// inputBox.onkeyup = (e)=>{
-//     let userData = e.target.value; //user enetered data
-//     let emptyArray = [];
-//     if(userData){
-//         icon.onclick = ()=>{
-//             webLink = `http://localhost/autocompletion/recherche.php/?search=${userData}`;
-//             linkTag.setAttribute("href", webLink);
-//             linkTag.click();
-//         }
-//         emptyArray = suggestions.filter((data)=>{
-//             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-//             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-//         });
-//         emptyArray = emptyArray.map((data)=>{
-//             // passing return data inside li tag
-//             return data = `<li>${data}</li>`;
-//         });
-//         searchWrapper.classList.add("active"); //show autocomplete box
-//         showSuggestions(emptyArray);
-//         let allList = suggBox.querySelectorAll("li");
-//         for (let i = 0; i < allList.length; i++) {
-//             //adding onclick attribute in all li tag
-//             allList[i].setAttribute("onclick", "select(this)");
-//         }
-//     }else{
-//         searchWrapper.classList.remove("active"); //hide autocomplete box
-//     }
-// }
-// function select(element){
-//     let selectData = element.textContent;
-//     inputBox.value = selectData;
-//     icon.onclick = ()=>{
-//         webLink = `https://www.google.com/search?q=${selectData}`;
-//         linkTag.setAttribute("href", webLink);
-//         linkTag.click();
-//     }
-//     searchWrapper.classList.remove("active");
-// }
-// function showSuggestions(list){
-//     let listData;
-//     if(!list.length){
-//         userValue = inputBox.value;
-//         listData = `<li>${userValue}</li>`;
-//     }else{
-//       listData = list.join('');
-//     }
-//     suggBox.innerHTML = listData;
-// }
